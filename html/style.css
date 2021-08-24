@@ -1,0 +1,93 @@
+body {
+  background-color: transparent;
+  font-family: "Righteous";
+
+}
+#menui {
+  position: absolute;
+  top: 40%;
+  left: 65%;
+}
+.menu-button {
+position: relative;
+min-width: 300px;
+border-style: groove;
+border-color: black;
+border-width: 2px;
+padding: 8px;
+margin: 5px;
+background-color: rgba(30, 30, 30, 0.7);
+}
+.menu-button:hover {
+  background-color: rgba(0, 167, 208, 0.8);
+}
+
+.menu-selector {
+position: relative;
+min-width: 300px;
+border-style: groove;
+border-color: black;
+border-width: 2px;
+padding: 8px;
+margin: 5px;
+background-color: rgba(30, 30, 30, 0.7);
+}
+.selector-button-minus{
+  display:inline-block;
+  color:white;
+  float:left;
+  height: 6%;
+  width: 6%;
+  text-align:center;
+  box-shadow: 0 0 0 1px white inset;
+  padding: 1px;
+}
+.selector-button-minus:hover {
+  background-color: rgba(0, 167, 208, 0.8);
+}
+
+.selector-button-plus{
+  display:inline-block;
+  color:white;
+  float:right;
+  height: 6%;
+  width: 6%;
+  text-align:center;
+  box-shadow: 0 0 0 1px white inset;
+  padding: 1px;
+}
+
+.selector-button-plus:hover {
+  background-color: rgba(0, 167, 208, 0.8);
+}
+
+.selector-value{
+  display:inline-block;
+  position: relative;
+  left: 40%;
+  color:white;
+  height: 6%;
+  width: 6%;
+  text-align:center;
+  box-shadow: 0 0 0 1px white inset;
+  padding: 1px;
+}
+
+
+.value-input{
+  position: relative;
+  outline: none;
+  border: none;
+  background: transparent;
+  color: white;
+  box-shadow: 0 0 0 2px white inset;
+  padding: 1px;
+  width: 120px;
+  height: 20px;
+  text-align: center;
+}
+
+
+.text {
+color:white;
+}

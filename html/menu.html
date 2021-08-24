@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"  type="text/javascript"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.min.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet">
+<script src="script.js "></script>
+<link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <div id="menui">
+
+    <div v-if="show" class="toast show" role="alert" aria-live="assertive" aria-atomic="true">
+
+      <div v-for="todo in list" >
+
+        <div class="menu-button" v-if="todo.type == 'default'" :data-id="todo.id" onclick="MenuItemDefault(this)">
+          <strong class="text">{{todo.name}}</strong>
+          <br>
+          <small class="text"> {{todo.description}}</small>
+        </div>
+
+        <div class="menu-selector" v-if="todo.type == 'selector'">
+          <strong class="text">{{todo.name}}</strong>
+          <br>
+          <small class="text"> {{todo.description}}</small>
+          <br>
+          <br>
+          <span :data-id="todo.id" class="selector-button-minus" :data-value="todo.value" onclick="MenuItemSelect(this, '-')">-</span>
+          <span class="selector-value">{{todo.value}}</span>
+          <span :data-id="todo.id" class="selector-button-plus" :data-value="todo.value" onclick="MenuItemSelect(this, '+')">+</span>
+        </div>
+
+        <div class="menu-selector" v-if="todo.type == 'input'">
+          <strong class="text">{{todo.name}}</strong>
+          <br>
+          <small class="text"> {{todo.description}}</small>
+          <br>
+          <br>
+          <input :data-id="todo.id" type="input" class="value-input" oninput="MenuItemInput(this)" v-model="name">
+        </div>
+
+    </div>
+    </div>
+
+  <div>
+</body>
+
+</html>
