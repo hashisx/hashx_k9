@@ -2,8 +2,8 @@
 
 # You must add this to QB Inventory.
 
-AddEventHandler("inventory:server:SearchLocalVehicleInventory", function(plate, list, cb)
-    
+
+    AddEventHandler("inventory:server:SearchLocalVehicleInventory", function(plate, list, cb)
     local TRUNK = Trunks[plate]
     local GLOVEBOX = Gloveboxes[plate]
     local RESULT = false
@@ -46,23 +46,22 @@ AddEventHandler("inventory:server:SearchLocalVehicleInventory", function(plate, 
             end
         end
     end
-    print(tostring(RESULT))
     cb(RESULT)
-end)
+    end)
+   
 
-function HasItem(list, item)
+    function HasItem(list, item)
 
-    for i = 1, #list do
+        for i = 1, #list do
 
-        if item == list[i] then
-            print('true')
-            return true
+            if item == list[i] then
+                return true
+            end
         end
+
+        return false
     end
 
-    return false
-end
 
 
-
-I did not create the K9 ped. All Credit goes to https://www.lcpdfr.com/downloads/gta5mods/character/19996-german-shepherd-malinois-k9-dog/
+I did not create the K9 ped. Repo: https://github.com/hashisx/k9_ped . All Credit goes to https://www.lcpdfr.com/downloads/gta5mods/character/19996-german-shepherd-malinois-k9-dog/
