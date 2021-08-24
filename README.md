@@ -1,5 +1,10 @@
 # Police K9 for QB Framework by Hashisx Discord: hashisx#3447
+#Use
+Left ALt is the default key.
 
+While Aiming pressing LEFT ALT will attack your target.
+While not Aiming pressing LEFT ALT will have your dog follow you.
+Holding LEFT ALT for 2 seconds to bring up K9 Actions.
 # You must add this to QB Inventory.
 
 
