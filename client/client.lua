@@ -114,7 +114,7 @@ function EnableK9()
                     ACTION_CD = GetGameTimer()
                     local DOG = NetworkGetEntityFromNetworkId(K9_ID)
 
-                    if IsPedInAnyVehicle(DOG) then
+                    if IsEntityAttached(DOG) then
                       K9ToggleVehicle(target)
                     else 
                       K9AttackorFollow(target)
@@ -457,7 +457,7 @@ function K9AttackorFollow(target)
     FOLLOWING = false
     QBCore.Functions.Notify(K9_NAME.." is attacking!", "error", 2000)
   else
-    TaskFollowToOffsetOfEntity(DOG, PlayerPedId(), 0.5, 0.0, 0.0, 5.0, -1, 1.0, true);
+    TaskFollowToOffsetOfEntity(DOG, PlayerPedId(), 0.5, -1.0, 0.0, 5.0, -1, 1.0, true);
     FOLLOWING = true
     QBCore.Functions.Notify(K9_NAME.." is following.", "primary", 2000)
   end
@@ -466,14 +466,14 @@ end
 function K9ToggleVehicle(target)
   SEARCHING = false
   local DOG = NetworkGetEntityFromNetworkId(K9_ID)
-  local VEHICLE = GetVehicleAheadOfPlayer()
+  local VEHICLE = QBCore.Functions.GetClosestVehicle()
   local DOOR = GetClosestVehicleDoor(VEHICLE)
   local PLAYER_COORDS = GetEntityCoords(PlayerPedId())
   local VEHICLE_COORDS = GetEntityCoords(VEHICLE)
   local DOG_COORDS = GetEntityCoords(DOG)
   local SEAT = 0
 
-  if #(VEHICLE_COORDS - DOG_COORDS) < 5 then
+  if #(VEHICLE_COORDS - DOG_COORDS) < 5 or target then
     if DOOR == 3 then
       SEAT = "seat_pside_r"
     else
@@ -528,7 +528,7 @@ end
 
 function K9SearchVehicle()
   FOLLOWING = false
-  local VEHICLE = GetVehicleAheadOfPlayer()
+  local VEHICLE = QBCore.Functions.GetClosestVehicle()
   local PLATE = GetVehicleNumberPlateText(VEHICLE)
   local DOG = NetworkGetEntityFromNetworkId(K9_ID)
 
@@ -702,21 +702,6 @@ function GetPlayersInRadius(min, max)
 
     end
     return IN_RANGE
-end
-
--- Gets Vehicle Ahead Of Player
-function GetVehicleAheadOfPlayer()
-    local PLAYER = PlayerPedId()
-    local COORDS = GetEntityCoords(PLAYER)
-    local OFFSET = GetOffsetFromEntityInWorldCoords(PLAYER, 0.0, 3.0, 0.0)
-    local RAY = StartShapeTestCapsule(COORDS.x, COORDS.y, COORDS.z, OFFSET.x, OFFSET.y, OFFSET.z, 5, 10, PLAYER, 7)
-    local RETURN, HIT, ENDCOORDS, SURFACE, VEHICLE = GetShapeTestResult(RAY)
-
-    if HIT then
-        return VEHICLE
-    else
-        return false
-    end
 end
 
 function GetPlayerSourceAheadOfPlayer()
