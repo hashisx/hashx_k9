@@ -11,6 +11,8 @@ Holding LEFT ALT for 2 seconds to bring up K9 Actions.
 
  You must be facing your target (vehicle or player) when selecting the Search Action, except for Search Area.
  Sometimes the Search Person will pick up the dog. Best to have the dog behind you.
+#K9 Ped
+ I did not create the K9 ped. Repo: https://github.com/hashisx/k9_ped . All Credit goes to https://www.lcpdfr.com/downloads/gta5mods/character/19996-german-shepherd-malinois-k9-dog/
 
 # You must add this to QB Inventory Server main.lua.
 
@@ -76,4 +78,4 @@ Holding LEFT ALT for 2 seconds to bring up K9 Actions.
 
 
 
-I did not create the K9 ped. Repo: https://github.com/hashisx/k9_ped . All Credit goes to https://www.lcpdfr.com/downloads/gta5mods/character/19996-german-shepherd-malinois-k9-dog/
+
