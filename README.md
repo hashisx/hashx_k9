@@ -12,7 +12,7 @@ Holding LEFT ALT for 2 seconds to bring up K9 Actions.
  You must be facing your target (vehicle or player) when selecting the Search Action, except for Search Area.
  Sometimes the Search Person will pick up the dog. Best to have the dog behind you.
 
-# You must add this to QB Inventory.
+# You must add this to QB Inventory Server main.lua.
 
 
     AddEventHandler("inventory:server:SearchLocalVehicleInventory", function(plate, list, cb)
